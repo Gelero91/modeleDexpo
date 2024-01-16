@@ -1,0 +1,1 @@
+// bar des filtres (marque, type d'objet...)
