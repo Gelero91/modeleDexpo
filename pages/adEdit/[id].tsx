@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import cardData, { CardData } from "../../data/cardData";
+import cardData from "../../data/cardData";
+import styles from "./adEdit.module.css";
 
 const EditCard = () => {
   const router = useRouter();
@@ -41,22 +42,23 @@ const EditCard = () => {
   return (
     <div>
       <Header />
-      <h1>Modifier la carte</h1>
+        <div className={styles.container}>
+          <h1>Modifier la carte</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Titre:
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-        </label>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Titre:
+              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            </label>
 
-        <label>
-          Contenu:
-          <textarea value={content} onChange={(e) => setContent(e.target.value)} />
-        </label>
+            <label>
+              Contenu:
+              <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+            </label>
 
-        <button type="submit">Modifier la carte</button>
-      </form>
-
+            <button type="submit">Modifier la carte</button>
+          </form>
+        </div>
       <Footer />
     </div>
   );

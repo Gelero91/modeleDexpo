@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './Header.module.css'; // Importez le fichier CSS pour ce composant
+import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/">
           <button className={styles.button}>Homepage</button>
