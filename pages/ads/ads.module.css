@@ -1,3 +1,22 @@
+/* search.module.css */
 .container {
-    min-height: 75vh; /* 100% de la hauteur de la fenêtre visible */
-  }
+  text-align: center;
+    min-height: 75vh;
+}
+
+/* Modifiez votre fichier ads.module.css */
+.listContainer {
+  display: flex;
+  flex-direction: column; /* Utilisez une colonne pour empiler verticalement les éléments fils */
+  align-items: center; /* Centre verticalement les éléments fils */
+}
+
+.cardContainer {
+    text-align: left;
+    width: 60%;
+    margin: 0 auto; /* Centrer le container horizontalement */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+}
