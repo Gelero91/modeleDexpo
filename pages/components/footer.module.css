@@ -1,23 +1,44 @@
-.footerNav {
-  position: absolute;
-  right: 0;
+.footer {
+  background-color: #0C0C0C;
+  
   width: 100%;
+  height: 128px;
 
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+  display: flex;
+  align-items: center;
+
 }
 
-.button {
-  width: 80px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+.footerLeft {
+
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
+
+.footerRight {
+  width: 40%;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer > hr {
+  border: solid 2px white;
+  border-radius: 2px;
+  height: 50%;
+}
+
+.btnFooter {
+  width: 210px;
+  height: 60px;
+
+  color: white;
+
+  font-size: 20px;
+}
+
+

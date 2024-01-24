@@ -4,7 +4,7 @@ import btnStyle from './button.module.css';
 type buttonProps = {
     text: string;
     path: string;
-    className: string;
+    className?: string;
 }
 
 export const Button: React.FC<buttonProps> = ({text, path, className}) => {
