@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import cardData from "../../data/cardData";
+import styles from "./ads.module.css";
 
 const CardDetails = () => {
     const router = useRouter();
@@ -18,8 +19,10 @@ const CardDetails = () => {
     return (
         <div>
             <Header />
-            <h1>{selectedCard.title}</h1>
-            <p>{selectedCard.content}</p>
+                <div className={styles.container}>
+                    <h1>{selectedCard.title}</h1>
+                    <p>{selectedCard.content}</p>
+                </div>
             <Footer />
         </div>
     );

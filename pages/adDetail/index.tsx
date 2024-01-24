@@ -3,6 +3,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Card from '../components/card';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
+import styles from "./adDetail.module.css";
 
 export default function adAmin() {
     return (

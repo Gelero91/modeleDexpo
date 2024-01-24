@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Card from '../components/card';
 import cardData from "../../data/cardData";
+import styles from "./ads.module.css";
 
 const cardsPerPage = 10;
 
@@ -20,27 +21,29 @@ const AdList = () => {
     return (
         <div>
             <Header />
-            <h1>Liste d'annonces</h1>
+                <div className={styles.container}>
+                    <br></br>
+                    <h1>Liste d'annonces</h1>
+                        <div className={styles.listContainer}>
+                            {cardsForCurrentPage.map((card) => (
+                                <div className={styles.cardContainer} key={card.id}>
+                                    <Link href={`/ads/${card.id}`}>
+                                        <Card title={card.title} content={card.content} />
+                                    </Link>
 
-            <ul>
-                {cardsForCurrentPage.map((card: CardData) => (
-                <div key={card.id}>
-                    <Link href={`/ads/${card.id}`}>
-                        <Card title={card.title} content={card.content} />
-                    </Link>
-                    
-                    <Link href={`/adEdit/${card.id}`}>
-                        Modifier
-                    </Link>
+                                    <Link href={`/adEdit/${card.id}`}>
+                                        Modifier
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                    <div>
+                        <p>Page {currentPage} sur {totalPages}</p>
+                        <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Précédent</button>
+                        <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Suivant</button>
+                    </div>
+                    <br></br>
                 </div>
-                ))}
-            </ul>
-
-            <div>
-                <p>Page {currentPage} sur {totalPages}</p>
-                <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Précédent</button>
-                <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Suivant</button>
-            </div>
 
             <Footer />
         </div>
