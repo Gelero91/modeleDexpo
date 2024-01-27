@@ -1,9 +1,7 @@
 // pages/index.tsx
 import React, { useState } from "react";
 import Link from "next/link";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Card from '../components/card';
+import Card from '../../components/card';
 import cardData from "../../data/cardData";
 
 const cardsPerPage = 10;
@@ -19,9 +17,7 @@ const AdList = () => {
 
     return (
         <div>
-            <Header />
             <h1>Liste d'annonces</h1>
-
             <ul>
                 {cardsForCurrentPage.map((card: CardData) => (
                 <div key={card.id}>
@@ -41,8 +37,6 @@ const AdList = () => {
                 <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Précédent</button>
                 <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Suivant</button>
             </div>
-
-            <Footer />
         </div>
     );
 };

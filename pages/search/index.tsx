@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Card from '../components/card';
+import Card from '../../components/card';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
 
 const cardsPerPage = 10;
@@ -28,7 +26,6 @@ export default function SearchPage() {
 
     return (
         <div>
-            <Header />
             <h1>Recherche d'annonces</h1>
 
             {/* Champ de recherche */}
@@ -63,8 +60,6 @@ export default function SearchPage() {
             ) : (
                 <p>{searchTerm ? "Aucun résultat trouvé." : "Veuillez entrer un critère de recherche."}</p>
             )}
-
-            <Footer />
         </div>
     );
 }

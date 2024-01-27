@@ -1,0 +1,7 @@
+/* card.module.css */
+
+.card {
+    border: 1px;
+    border-color: black;
+    margin: 10px;
+}

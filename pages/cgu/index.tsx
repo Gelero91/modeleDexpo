@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Card from '../../components/card';
 
 export default function CGU() {
 return (
     <div>
-    <Header />
         <h1>CGU</h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non purus sit amet est ullamcorper pellentesque nec a magna. Phasellus lacinia, neque eget ornare mattis, ex velit tincidunt urna, vel tempor magna mi in tellus. Aenean in turpis ut lectus gravida convallis. Aliquam sed mauris at sem egestas rutrum in id dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam volutpat vitae dolor a viverra. Curabitur mattis neque ut neque lobortis ornare. Quisque nunc metus, tincidunt sed consectetur cursus, consectetur non risus. In varius ipsum at tortor blandit, sit amet fermentum dui dapibus. Morbi blandit rhoncus urna pretium venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vitae consequat arcu.
@@ -18,7 +16,6 @@ return (
 
             In in placerat eros. Sed a sem rhoncus, gravida nisi in, ornare tellus. Sed urna mi, ullamcorper ut libero sed, ultricies dictum lacus. Cras ac fermentum nibh, quis feugiat tortor. Fusce rhoncus diam a molestie luctus. Fusce tempor ante quis urna elementum, eu tristique massa cursus. In et tortor odio. Ut nec diam et velit placerat feugiat vel vel purus.
         </p>
-    <Footer />
     </div>
 )
 }

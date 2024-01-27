@@ -1,8 +1,8 @@
 // pages/adEdit/[id].tsx
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 import cardData, { CardData } from "../../data/cardData";
 
 const EditCard = () => {
@@ -40,7 +40,6 @@ const EditCard = () => {
 
   return (
     <div>
-      <Header />
       <h1>Modifier la carte</h1>
 
       <form onSubmit={handleSubmit}>
@@ -56,8 +55,6 @@ const EditCard = () => {
 
         <button type="submit">Modifier la carte</button>
       </form>
-
-      <Footer />
     </div>
   );
 };

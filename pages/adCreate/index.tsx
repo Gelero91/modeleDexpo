@@ -1,8 +1,6 @@
 // pages/create-card.tsx
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Header from "../components/header";
-import Footer from "../components/footer";
 import cardData, { CardData } from "../../data/cardData";
 
 const CreateCard = () => {
@@ -30,7 +28,6 @@ const CreateCard = () => {
 
   return (
     <div>
-      <Header />
       <h1>Créer une nouvelle carte</h1>
 
       <form onSubmit={handleSubmit}>
@@ -46,8 +43,6 @@ const CreateCard = () => {
 
         <button type="submit">Créer la carte</button>
       </form>
-
-      <Footer />
     </div>
   );
 };

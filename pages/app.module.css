@@ -1,0 +1,14 @@
+@import '../app/fonts.css';
+
+.font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin-top: 25px;
+    min-height: 65vh;
+    position: relative;
+    width: 80%;
+    left: 10%;
+  }
+  

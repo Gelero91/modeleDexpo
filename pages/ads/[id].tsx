@@ -1,8 +1,6 @@
 // pages/ads/[id].
 import React from "react";
 import { useRouter } from "next/router";
-import Header from "../components/header";
-import Footer from "../components/footer";
 import cardData from "../../data/cardData";
 
 const CardDetails = () => {
@@ -17,10 +15,8 @@ const CardDetails = () => {
 
     return (
         <div>
-            <Header />
             <h1>{selectedCard.title}</h1>
             <p>{selectedCard.content}</p>
-            <Footer />
         </div>
     );
 };
