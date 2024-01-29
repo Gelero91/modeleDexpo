@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from '../../components/card';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
+import styles from "./search.module.css";
 
 const cardsPerPage = 10;
 
@@ -27,7 +28,8 @@ export default function SearchPage() {
     return (
         <div>
             <h1>Recherche d'annonces</h1>
-
+            <br />
+            <br />
             {/* Champ de recherche */}
             <input
                 type="text"
@@ -44,13 +46,17 @@ export default function SearchPage() {
                 <div>
                     <ul>
                         {cardsForCurrentPage.map((card) => (
-                            <li key={card.title}>
-                                <Card title={card.title} content={card.content} />
-                            </li>
+                            <div key={card.id} className={styles.card}>
+                                <li key={card.title}>
+                                    <Card title={card.title} content={card.content} />
+                                </li>
+                            </div>
                         ))}
                     </ul>
 
+
                     {/* Pagination */}
+                    <br />
                     <div>
                         <p>Page {currentPage} sur {totalPages}</p>
                         <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Précédent</button>

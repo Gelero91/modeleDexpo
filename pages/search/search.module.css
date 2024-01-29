@@ -1,0 +1,4 @@
+.card {
+    border: 1px solid black;  /* Ajout de "solid" pour spécifier le type de bordure */
+    margin: 10px;
+}

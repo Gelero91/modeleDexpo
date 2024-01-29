@@ -1,0 +1,26 @@
+@import '../app/fonts.css';
+
+.font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.pageContainer {
+    margin-top: 25px;
+    min-height: 65vh;
+    position: relative;
+    width: 80%;
+    left: 10%;
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Valeur plus grande pour des coins plus arrondis */
+  }

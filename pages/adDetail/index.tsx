@@ -6,6 +6,8 @@ export default function adAmin() {
     return (
         <div>
             <h1>adDetail</h1>
+            <br />
+            <br />
             <p>
                 détail d'un produit
             </p>

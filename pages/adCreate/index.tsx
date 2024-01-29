@@ -29,18 +29,22 @@ const CreateCard = () => {
   return (
     <div>
       <h1>Créer une nouvelle carte</h1>
-
+      <br />
+      <br />
       <form onSubmit={handleSubmit}>
         <label>
           Titre:
+          <br />
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         </label>
+        <br />
 
         <label>
           Contenu:
+          <br />
           <textarea value={content} onChange={(e) => setContent(e.target.value)} />
         </label>
-
+        <br />
         <button type="submit">Créer la carte</button>
       </form>
     </div>
