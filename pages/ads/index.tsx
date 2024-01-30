@@ -20,10 +20,11 @@ const AdList = () => {
         <div>
             <div className={styles.chapeau}>
                 <h1>Liste d'annonces</h1>
+                <p>ajouter filtre : type, lieu, ordonner selon prix...</p>
             </div>
 
             <div className={styles.separator}></div>
-
+            <br/>
             <ul>
                 {cardsForCurrentPage.map((card: CardData) => (
                 <div key={card.id} className={styles.card}>

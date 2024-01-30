@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import cardData, { CardData } from "../../data/cardData";
+import styles from "./[id].module.css";
+
 
 const EditCard = () => {
   const router = useRouter();
@@ -40,10 +42,13 @@ const EditCard = () => {
 
   return (
     <div>
-      <h1>Modifier la carte</h1>
-      <br />        
-      <br />
-      <form onSubmit={handleSubmit}>
+        <div className={styles.pageContainer}>
+            <div className={styles.chapeau}>
+                <h1>Modifier la carte</h1>
+            <div className={styles.separator}></div>
+          </div>
+        </div>            
+      <form onSubmit={handleSubmit} className={styles.paragraph}>
         <label>
           Titre:
           <br />
@@ -56,7 +61,8 @@ const EditCard = () => {
           <textarea value={content} onChange={(e) => setContent(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Modifier la carte</button>
+        <br />
+        <button type="submit" className={styles.bouton}>Modifier la carte</button>
       </form>
     </div>
   );

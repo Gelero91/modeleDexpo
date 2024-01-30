@@ -10,7 +10,9 @@ const Home: React.FC = () => {
   return (
     <>        
         <div className={styles.pageContainer}>
+          <div className={styles.chapeau}>
           <h1>INDEX</h1>
+          <div className={styles.separator}></div>
           <p>Page d'accueil</p>
             {/*
               <ul>
@@ -22,6 +24,8 @@ const Home: React.FC = () => {
               </ul>
             */
             }
+            <div/>
+            </div>
         </div>
     </>
   );

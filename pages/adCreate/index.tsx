@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import cardData, { CardData } from "../../data/cardData";
+import styles from "./adCreate.module.css";
+
 
 const CreateCard = () => {
   const router = useRouter();
@@ -28,9 +30,15 @@ const CreateCard = () => {
 
   return (
     <div>
-      <h1>Créer une nouvelle carte</h1>
-      <br />
-      <br />
+      <div className={styles.chapeau}>
+                <h1>Création d'annonce</h1>
+      </div>
+
+      <div className={styles.separator}></div>
+
+            {/* Champ de recherche */}
+      <div className={styles.paragraph}>
+
       <form onSubmit={handleSubmit}>
         <label>
           Titre:
@@ -45,9 +53,13 @@ const CreateCard = () => {
           <textarea value={content} onChange={(e) => setContent(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Créer la carte</button>
-      </form>
+      <div/>
+      <br/>
+        <button type="submit"  className={styles.button}>Créer la carte</button>
+        </form>
+      </div>
     </div>
+
   );
 };
 

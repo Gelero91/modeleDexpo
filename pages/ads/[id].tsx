@@ -2,6 +2,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import cardData from "../../data/cardData";
+import styles from "./ads.module.css"
 
 const CardDetails = () => {
     const router = useRouter();
@@ -14,9 +15,13 @@ const CardDetails = () => {
     }
 
     return (
-        <div>
-            <h1>{selectedCard.title}</h1>
+        <div className={styles.pageContainer}>
+            <div className={styles.chapeau}>
+                <h1>{selectedCard.title}</h1>
+            <div className={styles.separator}></div>
+
             <p>{selectedCard.content}</p>
+            </div>
         </div>
     );
 };
