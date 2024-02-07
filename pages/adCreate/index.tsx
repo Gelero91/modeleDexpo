@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import cardData, { CardData } from "../../data/cardData";
 import styles from "./adCreate.module.css";
 
-
 const CreateCard = () => {
   const router = useRouter();
 
