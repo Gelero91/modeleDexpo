@@ -7,7 +7,9 @@ const Header = () => {
     <header>
       <nav className={styles.nav}>
         <Link href="/">
-          <button className={styles.button}>Homepage</button>
+          <button className={styles.button}>
+            Homepage
+          </button>
         </Link>
 
         <Link href="/ads">
@@ -27,7 +29,7 @@ const Header = () => {
             Recherche
           </button>
         </Link>  
-          
+
       {/* 
       <Link href="/register">
             <button>

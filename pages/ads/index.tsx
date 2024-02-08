@@ -4,7 +4,6 @@ import Link from "next/link";
 import Card from '../../components/card';
 import cardData from "../../data/cardData";
 import styles from "./ads.module.css";
-import styles from "./ads.module.css";
 
 const cardsPerPage = 10;
 
