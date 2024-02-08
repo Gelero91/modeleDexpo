@@ -1,3 +1,4 @@
+// pages/search.tsx
 import React, { useState } from "react";
 import Card from '../../components/card';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
@@ -10,20 +11,14 @@ export default function SearchPage() {
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
 
-    // Filtrer les données en fonction du terme de recherche
     const filteredCardData = cardData.filter(card =>
         card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         card.content.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Calculer le nombre total de pages
     const totalPages = Math.ceil(filteredCardData.length / cardsPerPage);
-
-    // Calculer l'index de début et de fin des cartes à afficher sur la page actuelle
     const startIndex = (currentPage - 1) * cardsPerPage;
     const endIndex = startIndex + cardsPerPage;
-
-    // Sélectionner les cartes pour la page actuelle
     const cardsForCurrentPage = filteredCardData.slice(startIndex, endIndex);
 
     return (

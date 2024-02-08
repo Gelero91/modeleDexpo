@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './header.module.css'; // Importez le fichier CSS pour ce composant
+import styles from './Header.module.css'; // Importez le fichier CSS pour ce composant
 
 const Header = () => {
   return (
@@ -26,7 +26,8 @@ const Header = () => {
           <button className={styles.button}>
             Recherche
           </button>
-        </Link>    
+        </Link>  
+          
       {/* 
       <Link href="/register">
             <button>

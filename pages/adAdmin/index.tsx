@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from '../../components/card';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
+import styles from "./adAdmin.module.css";
 
 export default function adAdmin() {
     return (

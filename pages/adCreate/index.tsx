@@ -14,7 +14,7 @@ const CreateCard = () => {
     e.preventDefault();
 
     // Gérer la création d'une nouvelle carte ici
-    const newCard: CardData = {
+    const newCard = {
       id: cardData.length + 1, // Assurez-vous que les IDs sont uniques
       title,
       content,
