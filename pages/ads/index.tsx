@@ -1,9 +1,7 @@
 // pages/index.tsx
 import React, { useState } from "react";
 import Link from "next/link";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Card from '../components/card';
+import Card from '../../components/card';
 import cardData from "../../data/cardData";
 import styles from "./ads.module.css";
 
@@ -20,32 +18,38 @@ const AdList = () => {
 
     return (
         <div>
-            <Header />
-                <div className={styles.container}>
-                    <br></br>
-                    <h1>Liste d'annonces</h1>
-                        <div className={styles.listContainer}>
-                            {cardsForCurrentPage.map((card) => (
-                                <div className={styles.cardContainer} key={card.id}>
-                                    <Link href={`/ads/${card.id}`}>
-                                        <Card title={card.title} content={card.content} />
-                                    </Link>
+            <div className={styles.chapeau}>
+                <h1>Liste d'annonces</h1>
+                <p>ajouter filtre : type, lieu, ordonner selon prix...</p>
+            </div>
 
-                                    <Link href={`/adEdit/${card.id}`}>
-                                        Modifier
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-                    <div>
-                        <p>Page {currentPage} sur {totalPages}</p>
-                        <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Précédent</button>
-                        <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Suivant</button>
+            <div className={styles.separator}></div>
+            <br/>
+            <ul>
+                {cardsForCurrentPage.map((card: CardData) => (
+                <div key={card.id} className={styles.card}>
+                    <div key={card.id} className={styles.cardContent}>
+                        <Link href={`/ads/${card.id}`}>
+                            <Card title={card.title} content={card.content}  image={card.image} />
+                        </Link>
+
+  {/*   fonction de modification, ajouter condition administrateur
+                        
+                        <br/>
+                        <Link href={`/adEdit/${card.id}`}>
+                            Modifier
+                        </Link>
+ */}
                     </div>
-                    <br></br>
                 </div>
+                ))}
+            </ul>
 
-            <Footer />
+            <div className={styles.pagination}>
+                <p>Page {currentPage} sur {totalPages}</p>
+                <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} className={styles.boutonPagination}>Précédent</button>
+                <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages} className={styles.boutonPagination}>Suivant</button>
+            </div>
         </div>
     );
 };

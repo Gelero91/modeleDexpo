@@ -1,9 +1,7 @@
 // pages/create-card.tsx
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import cardData from "../../data/cardData";
+import cardData, { CardData } from "../../data/cardData";
 import styles from "./adCreate.module.css";
 
 const CreateCard = () => {
@@ -31,26 +29,36 @@ const CreateCard = () => {
 
   return (
     <div>
-      <Header />
-        <div className={styles.container}>
-          <h1>Créer une nouvelle carte</h1>
+      <div className={styles.chapeau}>
+                <h1>Création d'annonce</h1>
+      </div>
 
-          <form onSubmit={handleSubmit}>
-            <label>
-              Titre:
-              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-            </label>
+      <div className={styles.separator}></div>
 
-            <label>
-              Contenu:
-              <textarea value={content} onChange={(e) => setContent(e.target.value)} />
-            </label>
+            {/* Champ de recherche */}
+      <div className={styles.paragraph}>
 
-            <button type="submit">Créer la carte</button>
-          </form>
-        </div>
-      <Footer />
+      <form onSubmit={handleSubmit}>
+        <label>
+          Titre:
+          <br />
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        </label>
+        <br />
+
+        <label>
+          Contenu:
+          <br />
+          <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+        </label>
+        <br />
+      <div/>
+      <br/>
+        <button type="submit"  className={styles.button}>Créer la carte</button>
+        </form>
+      </div>
     </div>
+
   );
 };
 

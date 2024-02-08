@@ -1,11 +1,9 @@
 // pages/search.tsx
 import React, { useState } from "react";
-import Link from "next/link";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Card from '../components/card';
-import cardData from "../../data/cardData";
+import Card from '../../components/card';
+import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
 import styles from "./search.module.css";
+import Link from "next/link";
 
 const cardsPerPage = 10;
 
@@ -25,48 +23,62 @@ export default function SearchPage() {
 
     return (
         <div>
-            <Header />
-            <div className={styles.container}>
+            <div className={styles.chapeau}>
                 <h1>Recherche d'annonces</h1>
+                <p>ajouter filtre : type, lieu, ordonner selon prix...</p>
+            </div>
+
+            <div className={styles.separator}></div>
+
+            {/* Champ de recherche */}
+            <div className={styles.recherche}>
+
+                <p>mots-clés :</p>
                 <input
                     type="text"
                     placeholder="Entrez votre critère de recherche"
                     value={searchTerm}
                     onChange={(e) => {
-                        setCurrentPage(1);
+                        setCurrentPage(1); // Réinitialiser la page à la première lorsqu'un nouveau terme de recherche est saisi
                         setSearchTerm(e.target.value);
                     }}
                 />
-
-                {searchTerm && cardsForCurrentPage.length > 0 ? (
-                    <div className={styles.listContainer}>
-                            {cardsForCurrentPage.map((card) => (
-                                <div className={styles.cardContainer} key={card.title}>
-                                        <Link href={`/ads/${card.id}`}>
-                                            <Card title={card.title} content={card.content} />
-                                        </Link>
-                                        <Link href={`/adEdit/${card.id}`}>
-                                            Modifier
-                                        </Link>
-                                </div>
-                            ))}
-
-                        <div>
-                            <p>Page {currentPage} sur {totalPages}</p>
-                            <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-                                Précédent
-                            </button>
-                            <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
-                                Suivant
-                            </button>
-                        </div>
-                    </div>
-                ) : (
-                    <p>{searchTerm ? "Aucun résultat trouvé." : "Veuillez entrer un critère de recherche."}</p>
-                )}
-            <br></br>
+                <br/>
             </div>
-            <Footer />
+            <div className={styles.separator}></div>
+
+            <br />
+            <br />
+
+            {/* Liste filtrée en fonction du terme de recherche et de la pagination */}
+            {searchTerm && cardsForCurrentPage.length > 0 ? (
+                <div>
+                    <ul> 
+                        {cardsForCurrentPage.map((card) => (
+
+                            <Link href={`/ads/${card.id}`}>
+                            <div key={card.id} className={styles.card}>
+                                <li key={card.title}>
+                                    <Card title={card.title} content={card.content} image={card.image}/>
+                                </li>
+                            </div>
+                            </Link>
+                        ))}
+                    </ul>
+
+
+                    {/* Pagination */}
+                    <br />
+                    <div className={styles.pagination}>
+                        <p>Page {currentPage} sur {totalPages}</p>
+                        <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} className={styles.boutonPagination}>Précédent</button>
+                        <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages} className={styles.boutonPagination}>Suivant</button>
+                    </div>
+                    <br/>
+                </div>
+            ) : (
+                <p className={styles.paragraph}>{searchTerm ? "Aucun résultat trouvé." : "Veuillez entrer un critère de recherche."}</p>
+            )}
         </div>
     );
 }

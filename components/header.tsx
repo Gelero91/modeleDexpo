@@ -1,13 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './Header.module.css';
+import styles from './Header.module.css'; // Importez le fichier CSS pour ce composant
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header>
       <nav className={styles.nav}>
         <Link href="/">
-          <button className={styles.button}>Homepage</button>
+          <button className={styles.button}>
+            Homepage
+          </button>
         </Link>
 
         <Link href="/ads">
@@ -26,7 +28,8 @@ const Header = () => {
           <button className={styles.button}>
             Recherche
           </button>
-        </Link>    
+        </Link>  
+
       {/* 
       <Link href="/register">
             <button>

@@ -12,7 +12,7 @@
     margin: 20px auto;
 }
 
-.boutonPagination {
+.bouton {
     background-color: hsl(213, 39%, 49%);
     border-radius: 10px;
     color: white;
@@ -26,5 +26,5 @@
 }
 
 .paragraph{
-    text-align: justify;
+    text-align: center;
 }

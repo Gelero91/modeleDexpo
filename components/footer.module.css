@@ -1,10 +1,10 @@
-.nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
+/* Footer.module.css */
 
+.footer {
+  text-align: center;
+  padding: 10px;
   background-color: #333;
+  color: white;
 }
 
 .button {
@@ -14,7 +14,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
 }

@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Card from '../components/card';
+import Card from '../../components/card';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
 import styles from "./adDetail.module.css";
 
 export default function adAmin() {
     return (
-        <div>
-        <Header />
-            <h1>adDetail</h1>
-            <p>
-                détail d'un produit
-            </p>
-        <Footer />
+        <div className={styles.pageContainer}>
+            <div className={styles.chapeau}>
+                <h1>INDEX</h1>
+                <div className={styles.separator}></div>
+                <p>Page d'accueil</p>
+                <div />
+                <p>
+                    détail d'un produit
+                </p>
+            </div>
         </div>
-    )
-    }
+    );
+}
