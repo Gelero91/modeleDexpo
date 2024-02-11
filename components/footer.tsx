@@ -5,15 +5,19 @@ import styles from './footer.module.css'; // Importez le fichier CSS pour ce com
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Link href="/rgpd">
-        <button className={styles.button}>RGPD</button>
-      </Link>
-      <br/>
-      <Link href="/cgu">
-        <button className={styles.button}>CGU</button>
-      </Link>
-      <br/>
-      2023, Konexio
+      <div className={styles.linksContainer}>
+        <Link href="/rgpd">
+          <p className={styles.rgpd}>-RGPD</p>
+        </Link>
+
+        <Link href="/cgu">
+          <p className={styles.rgpd}>- CGU</p>
+        </Link>
+
+        <Link href="/cgu">
+          <button className={styles.button}>Nous contacter</button>
+        </Link>
+      </div>
     </footer>
   );
 };

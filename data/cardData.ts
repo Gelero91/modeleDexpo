@@ -1,3 +1,43 @@
+import axios from 'axios';
+
+const API_BASE_URL = 'http://localhost:3000'; // Remplace avec l'URL de ton backend
+
+export interface Ad {
+  id: number;
+  title: string;
+  content: string;
+  imageUrl: string;
+}
+
+export async function getAllAds(): Promise<Ad[]> {
+  const response = await axios.get(`${API_BASE_URL}/ads`);
+  return response.data;
+}
+
+export async function getAdById(id: number): Promise<Ad> {
+  const response = await axios.get(`${API_BASE_URL}/ads/${id}`);
+  return response.data;
+}
+
+export async function createAd(adData: Partial<Ad>): Promise<Ad> {
+  const response = await axios.post(`${API_BASE_URL}/ads`, adData);
+  return response.data;
+}
+
+export async function updateAd(id: number, adData: Partial<Ad>): Promise<Ad> {
+  const response = await axios.patch(`${API_BASE_URL}/ads/${id}`, adData);
+  return response.data;
+}
+
+export async function deleteAd(id: number): Promise<void> {
+  await axios.delete(`${API_BASE_URL}/ads/${id}`);
+}
+
+export async function getProductImageUrls(): Promise<string[]> {
+  const ads = await getAllAds();
+  return ads.map(ad => ad.imageUrl);
+}
+
 interface CardData {
   id: number;
   title: string;
