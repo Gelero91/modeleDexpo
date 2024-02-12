@@ -1,0 +1,38 @@
+.filterBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+
+}
+
+.unselected {
+    color: #646464;
+}
+
+.selected {
+    color: black;
+}
+
+.filterBarBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 5px 15px;
+
+    border: 1px #6E62FF solid;
+    border-radius: 32px;
+
+    box-shadow: 0px 0px 40px 0px rgba(110, 98, 255, 0.20);
+
+    color: black;
+}

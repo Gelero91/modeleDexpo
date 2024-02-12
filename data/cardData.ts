@@ -3,10 +3,14 @@ import axios from 'axios';
 const API_BASE_URL = 'http://localhost:3000'; // Remplace avec l'URL de ton backend
 
 export interface Ad {
-  id: number;
-  title: string;
-  content: string;
-  imageUrl: string;
+  key: string,
+  image: string,
+  title: string,
+  storeName: string,
+  storeCity: string,
+  discountPrice: number,
+  realPrice: number,
+  content: string
 }
 
 export async function getAllAds(): Promise<Ad[]> {
@@ -35,47 +39,125 @@ export async function deleteAd(id: number): Promise<void> {
 
 export async function getProductImageUrls(): Promise<string[]> {
   const ads = await getAllAds();
-  return ads.map(ad => ad.imageUrl);
+  return ads.map(ad => ad.image);
 }
 
-interface CardData {
-  id: number;
-  title: string;
-  content: string;
-  image: string; // Nouvelle propriété pour le chemin de l'image
+type CardData = {
+  key: string,
+  image: string,
+  title: string,
+  storeName: string,
+  storeCity: string,
+  discountPrice: number,
+  realPrice: number,
+  content: string
 }
 
 const IMAGE_URL = 'https://www.jaimefruitsetlegumes.ca/wp-content/uploads/2019/09/Fraise-700x700.png';
 
+
 const cardsData: CardData[] = [
-  { id: 1, title: 'Card1', content: 'Contenu de la carte 1', image: IMAGE_URL },
-  { id: 2, title: 'Card2', content: 'Contenu de la carte 2', image: IMAGE_URL },
-  { id: 3, title: 'Card3', content: 'JE TEST LA 3 !', image: IMAGE_URL },
-  { id: 4, title: 'Card4', content: 'Contenu de la carte 4', image: IMAGE_URL },
-  { id: 5, title: 'Card5', content: 'Contenu de la carte 5', image: IMAGE_URL },
-  { id: 6, title: 'Card6', content: 'Contenu de la carte 6', image: IMAGE_URL },
-  { id: 7, title: 'Card7', content: 'Contenu de la carte 7', image: IMAGE_URL },
-  { id: 8, title: 'Card8', content: 'Contenu de la carte 8', image: IMAGE_URL },
-  { id: 9, title: 'Card9', content: 'Contenu de la carte 9', image: IMAGE_URL },
-  { id: 10, title: 'Card10', content: 'Contenu de la carte 10', image: IMAGE_URL },
-  { id: 11, title: 'Card11', content: 'Contenu de la carte 11', image: IMAGE_URL },
-  { id: 12, title: 'Card12', content: 'Contenu de la carte 12', image: IMAGE_URL },
-  { id: 13, title: 'Card13', content: 'Contenu de la carte 13', image: IMAGE_URL },
-  { id: 14, title: 'Card14', content: 'Contenu de la carte 14', image: IMAGE_URL },
-  { id: 15, title: 'Card15', content: 'Contenu de la carte 15', image: IMAGE_URL },
-  { id: 16, title: 'Card16', content: 'Contenu de la carte 16', image: IMAGE_URL },
-  { id: 17, title: 'Card17', content: 'Contenu de la carte 17', image: IMAGE_URL },
-  { id: 18, title: 'Card18', content: 'Contenu de la carte 18', image: IMAGE_URL },
-  { id: 19, title: 'Card19', content: 'Contenu de la carte 19', image: IMAGE_URL },
-  { id: 20, title: 'Card20', content: 'Contenu de la carte 20', image: IMAGE_URL },
-  { id: 21, title: 'Card21', content: 'Contenu de la carte 21', image: IMAGE_URL },
-  { id: 22, title: 'Card22', content: 'Contenu de la carte 22', image: IMAGE_URL },
-  { id: 23, title: 'Card23', content: 'Contenu de la carte 23', image: IMAGE_URL },
-  { id: 24, title: 'Card24', content: 'Contenu de la carte 24', image: IMAGE_URL },
-  { id: 25, title: 'Card25', content: 'Contenu de la carte 25', image: IMAGE_URL },
-  { id: 26, title: 'Card26', content: 'Contenu de la carte 26', image: IMAGE_URL },
-  { id: 27, title: 'Card27', content: 'Contenu de la carte 27', image: IMAGE_URL },
-  { id: 28, title: 'Card28', content: 'Contenu de la carte 28', image: IMAGE_URL },
+      {
+        key: "e0ae3aef-263c-45be-9d98-4a0fda6a6904",
+        image: "https://loremflickr.com/640/480?lock=163267773202432",
+        title: "Handmade Cotton Mouse",
+        storeName: "sofadepaul",
+        storeCity: "Anikastad",
+        discountPrice: 314,
+        realPrice: 846,
+        content: "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+      },
+      {
+        key: "665bcf09-b62b-4ad6-b9d8-e5b8a2c27369",
+        image: "https://loremflickr.com/640/480?lock=5756222607196160",
+        title: "Electronic Granite Bacon",
+        storeName: "sofadepaul",
+        storeCity: "Parisianville",
+        discountPrice: 771,
+        realPrice: 425,
+        content: "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles"
+      },
+      {
+        key: "754e628e-2cfc-4b17-83ca-2c5f9a1d3947",
+        image: "https://loremflickr.com/640/480?lock=6152761284493312",
+        title: "Fantastic Fresh Gloves",
+        storeName: "sofadepaul",
+        storeCity: "Fort Constance",
+        discountPrice: 615,
+        realPrice: 907,
+        content: "The Football Is Good For Training And Recreational Purposes"
+      },
+      {
+        key: "c30048c9-60ad-4c6a-82d0-b62f4159c899",
+        image: "https://loremflickr.com/640/480?lock=8032892642918400",
+        title: "Recycled Granite Mouse",
+        storeName: "rono",
+        storeCity: "Luettgenburgh",
+        discountPrice: 434,
+        realPrice: 66,
+        content: "The Football Is Good For Training And Recreational Purposes"
+      },
+      {
+        key: "801ea8ce-5eee-4a91-9fe4-7fa1d5b45ffa",
+        image: "https://picsum.photos/seed/9jUaAXM/640/480",
+        title: "Tasty BronzeKeyoard",
+        storeName: "Eeki",
+        storeCity: "Lake Lyric",
+        discountPrice: 76,
+        realPrice: 208,
+        content: "The Football Is Good For Training And Recreational Purposes"
+      },
+      {
+        key: "0d971e1e-3ddd-4877-9edf-f1cf4ea76bd8",
+        image: "https://loremflickr.com/640/480?lock=427766346416128",
+        title: "Luxurious Steel Pants",
+        storeName: "Compagnie du dodo",
+        storeCity: "North Russ",
+        discountPrice: 825,
+        realPrice: 736,
+        content: "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
+      },
+      {
+        key: "eccdc63a-beb2-4a54-b71b-f9dcd929aa96",
+        image: "https://loremflickr.com/640/480?lock=651581284417536",
+        title: "Sleek Bronze Chips",
+        storeName: "lacuisineestla",
+        storeCity: "New Enos",
+        discountPrice: 276,
+        realPrice: 157,
+        content: "The slim & simple Maple GamingKeyoard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+      },
+      {
+        key: "29aa594b-eec7-4581-a9ea-bc5a13a8fc59",
+        image: "https://loremflickr.com/640/480?lock=2727964781314048",
+        title: "Rustic Metal Ball",
+        storeName: "sofadepaul",
+        storeCity: "Johathanberg",
+        discountPrice: 180,
+        realPrice: 909,
+        content: "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"
+      },
+      {
+        key: "7a333382-6288-47d8-9280-b19c6a5609d6",
+        image: "https://picsum.photos/seed/mO0kbg/640/480",
+        title: "Sleek Plastic Bike",
+        storeName: "lacuisineestla",
+        storeCity: "Lake Dejon",
+        discountPrice: 659,
+        realPrice: 996,
+        content: "The Football Is Good For Training And Recreational Purposes"
+      },
+      {
+        key: "7eac07fa-0896-4037-b2a9-b2f66dcf03ac",
+        image: "https://picsum.photos/seed/ul8Nr/640/480",
+        title: "Electronic Bronze Shirt",
+        storeName: "pasdepainici",
+        storeCity: "Lake Emieville",
+        discountPrice: 949,
+        realPrice: 173,
+        content: "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"
+      }
 ];
+
 
 export default cardsData;

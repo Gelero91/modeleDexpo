@@ -1,0 +1,15 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+
+    background-color: #FFEEE8;
+    width: 406px;
+    height: 40px;
+    padding-left: 20px;
+    
+    border-radius: 37px;
+
+    color: #8E8E8E;
+    font-style: italic;
+    font-size: 0.8em;
+}

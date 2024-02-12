@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import Card from '../../components/card';
+import Card from '../../components/AdCard';
 import styles from './rgd.module.css';
 
 export default function RGPD() {

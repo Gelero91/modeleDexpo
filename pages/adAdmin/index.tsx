@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from '../../components/card';
+import Card from '../../components/AdCard';
 import cardData from "../../data/cardData"; // Assurez-vous d'importer les données correctes
 import styles from "./adAdmin.module.css";
 

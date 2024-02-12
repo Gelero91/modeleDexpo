@@ -1,34 +1,34 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './Header.module.css'; // Importez le fichier CSS pour ce composant
+import styles from './header.module.css';
+import SearchBar from './SearchBar';
+import Image from 'next/image'
+import Logo from '../public/assets/logo.png'
+import { Button } from './Button';
+
 
 const Header = () => {
   return (
-    <header>
-      <nav className={styles.nav}>
-        <Link href="/">
-          <button className={styles.button}>
-            Homepage
-          </button>
+    <header className={styles.header}>
+      <nav className={styles.headerLeft}> 
+       <Link href="/">
+          <Image
+            src={Logo}
+            width={134}
+            height={40}
+            alt="Logo de modeExpo"
+          />
         </Link>
+      </nav>
 
-        <Link href="/ads">
-          <button className={styles.button}>
-            Annonces
-          </button>
-        </Link>
-        
-        <Link href="/adCreate">
-          <button className={styles.button}>
-            Créer annonce
-          </button>
-        </Link>
+      
 
-        <Link href="/search">
-          <button className={styles.button}>
-            Recherche
-          </button>
-        </Link>  
+      <nav className={styles.headerRight}>
+          <SearchBar />
+          <Button text='Se connecter' path='/signin' className={styles.btnHeader}/>
+          <Button text="S'inscrire" path='/signup' className={styles.btnHeader}/>
+          <Button text='Annonces' path='/ads' className={styles.btnHeader}/>
+      </nav>
 
       {/* 
       <Link href="/register">
@@ -56,8 +56,6 @@ const Header = () => {
         </Link> 
         */}
 
-    </nav>
-    <br/>
     </header>
   );
 };

@@ -1,9 +1,11 @@
 // pages/index.tsx
 import React, { useState } from "react";
 import Link from "next/link";
-import Card from '../../components/card';
+import Card from '../../components/AdCard';
 import cardData from "../../data/cardData";
 import styles from "./ads.module.css";
+import FilterBar from "../../components/FilterBar";
+import AdCard from "../../components/AdCard";
 
 const cardsPerPage = 10;
 
@@ -18,32 +20,36 @@ const AdList = () => {
 
     return (
         <div>
-            <div className={styles.chapeau}>
-                <h1>Liste d'annonces</h1>
-                <p>ajouter filtre : type, lieu, ordonner selon prix...</p>
-            </div>
+            <FilterBar />
 
-            <div className={styles.separator}></div>
-            <br/>
-            <ul>
-                {cardsForCurrentPage.map((card: CardData) => (
-                <div key={card.id} className={styles.card}>
-                    <div key={card.id} className={styles.cardContent}>
-                        <Link href={`/ads/${card.id}`}>
-                            <Card title={card.title} content={card.content}  image={card.image} />
-                        </Link>
+            <h1 className={styles.chapeau}>Toutes les annonces</h1>
 
-  {/*   fonction de modification, ajouter condition administrateur
-                        
-                        <br/>
-                        <Link href={`/adEdit/${card.id}`}>
-                            Modifier
-                        </Link>
- */}
-                    </div>
-                </div>
+            <hr className={styles.separator}></hr>
+
+                        {/* <div key={card.id} className={styles.cardContent}>
+                            <Link href={`/ads/${card.id}`}>
+                                <Card title={card.title} content={card.content}  image={card.image} />
+                            </Link>
+                        </div> */}
+
+
+            <section className={styles.cardList}>
+
+                { cardsForCurrentPage.map((card: CardData) => (
+                    <AdCard 
+                        key={card.id}
+                        title={card.title}
+                        image={card.image}                                              
+                        storeName={card.storeName}
+                        storeCity={card.storeCity}
+                        discountPrice={card.discountPrice}
+                        realPrice={card.realPrice}
+                        content={card.content} 
+                    />
                 ))}
-            </ul>
+            </section>
+
+            
 
             <div className={styles.pagination}>
                 <p>Page {currentPage} sur {totalPages}</p>

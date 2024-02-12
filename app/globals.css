@@ -3,6 +3,8 @@
 @tailwind utilities;
 @import './fonts.css';
 
+/* purple color :#6E62FF */
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -20,13 +22,13 @@
 body {
   font-family: 'Poppins', sans-serif;
 
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
@@ -47,4 +49,18 @@ body {
   position: relative;
   width: 80%;
   left: 10%;
+}
+
+main {
+  min-height: 78.5%;
+}
+
+.test {
+  background-color: red;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
 }

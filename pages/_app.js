@@ -1,5 +1,6 @@
 import '../app/globals.css';
 import Header from "../components/header";
+import CategoryBar from "../components/CategoryBar"
 import Footer from "../components/footer";
 import styles from "./app.module.css";
 
@@ -9,9 +10,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <> 
         <Header />
-          <div className={styles.pageContainer}>
+        <CategoryBar />
+          <main className={styles.pageContainer}>
             <Component {...pageProps} />
-          </div>
+          </main>
         <Footer />
     </>
   );

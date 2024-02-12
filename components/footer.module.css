@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   text-align: center;
   background-color: #393838;
   padding: 10px;
@@ -21,4 +21,48 @@
   font-size: 12px;
   margin: 4px;
   cursor: pointer;
+} */
+
+.footer {
+  background-color: #0C0C0C;
+
+  width: 100%;
+  height: 128px;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.footerLeft {
+
+  width: 60%;
+
+  display: flex;
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  gap: 110px;
+}
+
+.footerRight {
+  width: 40%;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer > hr {
+  border: solid 1px #6E62FF;
+  border-radius: 2px;
+  height: 42px;
+}
+
+.btnFooter {
+  width: 210px;
+  height: 60px;
+
+  color: white;
+
+  font-size: 20px;
 }
